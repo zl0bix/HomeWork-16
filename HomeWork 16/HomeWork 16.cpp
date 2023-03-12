@@ -6,6 +6,8 @@ int main(){
     double n = 0;
     int m = 0;
     setlocale(LC_ALL, "rus");
+
+    // Ex 1
     std::cout << "\n\n\t\tHome work 16.1\n\n";//среднее арифметическое значение  одномерного массива
     
     const unsigned int size0 = 10;
@@ -34,6 +36,7 @@ int main(){
     std::cout << std::endl;
     std::cout << "\nИх количество: " <<m;
 
+    // Ex 2
     std::cout << "\n\n\t\tHome work 16.2\n\n";//двумерные массивы
     
     const unsigned int size1 = 5;
@@ -67,24 +70,24 @@ int main(){
             std::cout << arr1[i][j] + arr2[i][j] << "\t";
         std::cout << std::endl;
     }
-
+    // Ex 3
     std::cout << "\n\n\t\tHome work 16.3\n\n";//6 значное число -> массив
     std::cout << "Введите шести значное число -> ";
     std::cin >> m;
     const int size3 = 6;
     int arr3[size3];
     if (m > 99999 && m < 1000000) {
-        int k = 1000000;
+        
+        int del = 100000;
+        int mod;
+        std::cout << "Переводим в линейный массив: ";
         for (int i = 0; i < size3; i++) {
-           
-            arr3[i] = m % k << ' ';
-            k /= 10;
-            if (k == 1) {
-                arr3[i] = m / 10;
-                std::cout << arr3[i] << ' ';
-            }
-            else
+                     
+            mod = m / del;
+            del /= 10; 
+            arr3[i] = mod%10;
             std::cout << arr3[i] << ' ';
+            
         }
     }
     else
